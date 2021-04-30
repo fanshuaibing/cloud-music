@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SliderContainer } from "./style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
-import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.css";
 import "swiper/components/navigation/navigation.min.css";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -12,7 +12,7 @@ function Slider(props) {
   return (
     <SliderContainer>
       <div className="before" />
-      <Swiper autoplay>
+      <Swiper autoplay pagination={{ clickable: true }}>
         {bannerList.map((slider, index) => {
           return (
             <SwiperSlide key={index}>
